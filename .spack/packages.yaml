@@ -1,0 +1,13 @@
+packages:
+    openssl:
+        paths:
+            openssl: /usr
+        buildable: False
+    openmpi:
+        paths:
+            openmpi: /usr
+        buildable: False
+    netlib-lapack:
+        paths:
+            netlib-lapack: /usr
+        buildable: False
