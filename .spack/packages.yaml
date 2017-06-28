@@ -5,7 +5,7 @@ packages:
     buildable: False
   openmpi:
     paths:
-      openmpi: /usr
+      openmpi: /usr/lib64/openmpi
     buildable: False
   netlib-lapack:
     paths:

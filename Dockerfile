@@ -1,10 +1,8 @@
 # Use an Ubuntu as a base image
-FROM ubuntu:14.04
+FROM centos:6
 
 # Install required packages as specified in pkglst
-RUN apt-get update
-RUN apt-get -y upgrade
-RUN apt-get -y install git make python curl unzip xz-utils g++ gfortran vim libopenmpi-dev openssl liblapack-dev
+RUN yum -y install git make python curl gcc-c++ gcc-gfortran vim openmpi-devel openssl-devel lapack-devel patch unzip xz
 
 # Make user and copy spack config
 RUN useradd -m user
