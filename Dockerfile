@@ -15,8 +15,8 @@ USER user
 # Clone spack and install triqs
 RUN git clone https://github.com/Wentzell/spack.git /home/user/spack
 WORKDIR /home/user/spack
-RUN export PATH=/home/user/spack/bin:$PATH
-RUN source share/spack/setup-env.sh
+ENV PATH /home/user/spack/bin:${PATH}
+RUN /bin/bash -c "source share/spack/setup-env.sh"
 RUN git checkout triqs
 RUN spack install gcc@7.1.0
 RUN spack load gcc@7.1.0
