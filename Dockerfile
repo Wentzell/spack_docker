@@ -18,9 +18,9 @@ WORKDIR /home/user/spack
 ENV PATH /home/user/spack/bin:${PATH}
 RUN /bin/bash -c "source share/spack/setup-env.sh"
 RUN git checkout triqs
-RUN spack install gcc@7.1.0
-RUN spack load gcc@7.1.0
+RUN spack install intel@17.0.4
+RUN spack load intel@17.0.4
 RUN spack compiler find
-RUN spack install triqs %gcc@7.1.0
+RUN spack install triqs %intel@17.0.4
 
 CMD /bin/bash
