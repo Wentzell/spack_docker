@@ -9,6 +9,8 @@ RUN useradd -m user
 ADD .spack /home/user/.spack
 RUN chown -R user:user /home/user/.spack
 RUN echo "source /home/user/spack/share/spack/setup-env.sh" >> /home/user/.bashrc
+RUN echo "source /home/user/spack/share/spack/setup-env.sh" >> /root/.bashrc
+RUN /bin/bash -c "source /home/user/spack/share/spack/setup-env.sh"
 USER user
 
 # Clone spack and install triqs
