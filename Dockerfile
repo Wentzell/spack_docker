@@ -8,13 +8,11 @@ RUN yum -y install git make python curl gcc-c++ gcc-gfortran vim openmpi-devel o
 RUN useradd -m user
 ADD .spack /home/user/.spack
 RUN chown -R user:user /home/user/.spack
-RUN echo "source /home/user/spack/share/spack/setup-env.sh" >> /home/user/.bashrc
-RUN echo "source /home/user/spack/share/spack/setup-env.sh" >> /root/.bashrc
-RUN /bin/bash -c "source /home/user/spack/share/spack/setup-env.sh"
 USER user
 
 # Clone spack and install triqs
 RUN git clone https://github.com/Wentzell/spack.git /home/user/spack
+RUN /bin/bash -c "source /home/user/spack/share/spack/setup-env.sh"
 WORKDIR /home/user/spack
 ENV PATH /home/user/spack/bin:${PATH}
 RUN git checkout triqs
